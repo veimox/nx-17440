@@ -1,0 +1,23 @@
+{
+  "name": "test-me",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/test-me",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "web",
+        "outputPath": "dist/packages/test-me",
+        "compiler": "babel",
+        "main": "packages/test-me/src/main.ts",
+        "tsConfig": "packages/test-me/tsconfig.app.json",
+        "webpackConfig": "packages/test-me/webpack.config.js",
+        "babelUpwardRootMode": true,
+        "generatePackageJson": true
+      }
+    }
+  },
+  "tags": []
+}
